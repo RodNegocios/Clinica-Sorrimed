@@ -21,6 +21,10 @@ test('downloadable HTML renders and works without requesting any other file', as
   await expect(page.locator('.hero-image > img')).toHaveJSProperty('complete', true);
   expect(await page.locator('.hero-image > img').evaluate(img => img.naturalWidth)).toBeGreaterThan(0);
   await context.setOffline(true);
+  await page.locator('#cuidado').scrollIntoViewIfNeeded();
+  await expect(page.locator('.doctor-lanyard-stage')).toHaveAttribute('data-ready', 'true', { timeout: 25000 });
+  await page.getByRole('button', { name: 'Virar fotografia da doutora' }).click();
+  await expect(page.locator('.lanyard')).toHaveAttribute('data-side', 'back');
   await page.locator('.gallery-stage').scrollIntoViewIfNeeded();
   for (const label of ['Nossos sorrisos', 'Antes e depois', 'Nossa clínica']) {
     await page.getByRole('button', { name: label, exact: true }).click();

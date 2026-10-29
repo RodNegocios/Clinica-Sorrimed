@@ -83,6 +83,10 @@ test('navigation, care accordion and reduced motion remain functional', async ({
   await expect(page.getByRole('region', { name: /Cada sorriso, um caminho/ })).toContainText('Um olhar individual');
   await expect(page.getByRole('button', { name: /Primeiro, a gente escuta/ })).toHaveAttribute('aria-expanded', 'false');
   expect(await page.locator('.seal-ring').evaluate(el => getComputedStyle(el).animationName)).toBe('none');
+  await expect(page.locator('.doctor-card-fallback')).toBeVisible();
+  await expect(page.locator('.lanyard-canvas')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Virar fotografia da doutora' }).click();
+  await expect(page.locator('.doctor-card-fallback img')).toHaveAttribute('alt', 'Dra. Laiane ao lado de uma paciente na SorriMed');
   await page.locator('#sorrisos').scrollIntoViewIfNeeded();
   await expect(page.locator('.bounce-cards__card').first()).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();

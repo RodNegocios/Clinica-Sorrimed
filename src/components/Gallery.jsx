@@ -9,7 +9,7 @@ export const galleries = {
     { id: 'crianca-sorriso', alt: 'Criança sorrindo com uma medalha no consultório', caption: 'Pequenos sorrisos, grandes momentos.' },
     { id: 'doutora-paciente', alt: 'Dra. Laiane ao lado de uma paciente na clínica', caption: 'Cuidado que aproxima.' },
     { id: 'crianca-desenhando', alt: 'Criança desenhando com a equipe da clínica', caption: 'Espaço para ser criança.' },
-    { id: 'paciente', alt: 'Paciente em frente à marca SorriMed', caption: 'Cada sorriso tem sua história.' },
+    { id: 'paciente-azul', alt: 'Paciente em frente à marca SorriMed', caption: 'Cada sorriso tem sua história.' },
     { id: 'crianca-brincando', alt: 'Criança brincando na cadeira do consultório', caption: 'Acolhimento desde o começo.' },
   ] },
   resultados: { label: 'Antes e depois', items: Array.from({ length: 7 }, (_, i) => ({ id: `resultado-0${i + 1}`, alt: `Registro original de antes e depois ${i + 1}`, caption: 'Uma história de cuidado.' })) },

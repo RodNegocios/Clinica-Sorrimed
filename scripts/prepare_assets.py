@@ -10,7 +10,7 @@ SOURCES = {
     'atendimento': 'doutora atendendo paciente.png',
     'doutora-paciente': 'foto da doutora com paciente.png',
     'sorriso': 'foto paciente sorrido (foto muito legal).png',
-    'paciente': 'foto paciente.jpg',
+    'paciente-azul': 'foto paciente.jpg',
     'crianca-sorriso': 'foto paiente criança.png',
     'crianca-brincando': 'paciente criança se divertindo no consutório.jpg',
     'crianca-desenhando': 'paciente criança se divertindo.png',
@@ -30,7 +30,8 @@ target = ROOT / 'public/images'
 target.mkdir(parents=True, exist_ok=True)
 manifest = {}
 for name, filename in SOURCES.items():
-    with Image.open(ROOT / 'assets/originals' / filename) as original:
+    source = ROOT / 'assets/edited/paciente-azul.png' if name == 'paciente-azul' else ROOT / 'assets/originals' / filename
+    with Image.open(source) as original:
         image = ImageOps.exif_transpose(original)
         variants = []
         for size in (480, 900, 1400):
@@ -39,6 +40,6 @@ for name, filename in SOURCES.items():
             output = target / f'{name}-{size}.webp'
             copy.save(output, 'WEBP', quality=85, method=6)
             variants.append({'src': f'/images/{output.name}', 'width': copy.width, 'height': copy.height})
-        manifest[name] = {'original': filename, 'width': image.width, 'height': image.height, 'variants': variants}
+        manifest[name] = {'source': str(source.relative_to(ROOT)), 'original': filename, 'width': image.width, 'height': image.height, 'variants': variants}
 (ROOT / 'src/assets.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
 print(f'Prepared {len(manifest)} original assets; {sum(p.stat().st_size for p in target.glob("*.webp")) / 1024 / 1024:.2f} MB of web derivatives.')

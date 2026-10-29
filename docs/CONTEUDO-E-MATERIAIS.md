@@ -13,7 +13,7 @@ Paleta de dourado, preto suave e tons claros, Cormorant Garamond para títulos e
 | doutora atendendo paciente.png | Retrato da doutora em atividade na seção de apresentação. |
 | foto da doutora com paciente.png | Foto complementar da doutora e galeria de sorrisos. |
 | foto paciente sorrido (foto muito legal).png | Galeria de pacientes. |
-| foto paciente.jpg | Galeria, preservada na resolução original sem ampliação artificial. |
+| foto paciente.jpg | Original preservado. A galeria usa a edição solicitada em `assets/edited/paciente-azul.png`, com melhoria de nitidez e recorte centralizado. |
 | foto paiente criança.png | Galeria de pacientes. |
 | paciente criança se divertindo no consutório.jpg | Galeria de pacientes, cena de brincadeira. |
 | paciente criança se divertindo.png | Galeria, desenho e acolhimento infantil. |
@@ -42,6 +42,12 @@ SorriMed Clínica Odontológica, Comodoro/MT, endereço, CEP, Dra. Laiane Basíl
 Nome completo, CRO e especialidade profissional precisam da confirmação indicada no briefing. O nome abreviado fornecido foi usado no layout de desenvolvimento. Não há credenciais ou títulos profissionais inventados. Não existe lista de serviços confirmada; a seção de cuidado descreve a experiência, sem apresentar especialidades presumidas. Horários não confirmados e avaliações de captura antiga não foram publicados como dados atuais.
 
 O texto institucional foi redigido com base na mensagem fornecida, sem alegações clínicas específicas, prêmios, números de pacientes ou garantias.
+
+## Atualização: retrato interativo e fotografia do paciente
+
+O componente Lanyard do React Bits foi integrado a partir do código completo fornecido no pedido. O retrato da doutora fica suspenso por uma fita escura com metal dourado; o verso mostra a doutora com uma paciente. Os textos de cuidado foram encurtados. É possível arrastar ou virar a foto, inclusive pelo botão acessível ao teclado. Fora da tela, a renderização é pausada. Sem WebGL ou com preferência por movimento reduzido, a foto continua disponível em um cartão estático que pode ser virado.
+
+A fotografia do rapaz de azul recebeu tratamento digital com a ferramenta de edição de imagem, conforme solicitado: recorte mais próximo, centralização e melhoria de nitidez. A edição não é um registro de resultado odontológico. O arquivo de baixa resolução permanece intacto em `assets/originals/foto paciente.jpg`; a versão editada está em `assets/edited/paciente-azul.png`. Os derivados WebP têm novos nomes para evitar que o navegador continue mostrando a imagem antiga em cache.
 
 ## Interações
 

@@ -5,6 +5,7 @@ import Lenis from 'lenis';
 import Photo from './components/Photo';
 import Icon from './components/Icon';
 import Gallery from './components/Gallery';
+import DoctorLanyard from './components/DoctorLanyard';
 
 gsap.registerPlugin(ScrollTrigger);
 const WHATSAPP = 'https://wa.me/5565999800704';
@@ -41,9 +42,9 @@ function Seal() {
 function CareAccordion() {
   const [active, setActive] = useState(0);
   const items = [
-    ['Primeiro, a gente escuta.', 'Seu momento, suas dúvidas e o que você deseja para o seu sorriso. Nossa conversa começa por você.'],
-    ['Cada sorriso, um caminho.', 'Um olhar individual para entender suas necessidades e conversar sobre as possibilidades de cuidado.'],
-    ['Cuidado que continua.', 'Da primeira conversa aos próximos encontros, um espaço para você se sentir à vontade.'],
+    ['Primeiro, a gente escuta.', 'Nossa conversa começa por você, suas dúvidas e seus desejos.'],
+    ['Cada sorriso, um caminho.', 'Um olhar individual para suas necessidades e possibilidades de cuidado.'],
+    ['Cuidado que continua.', 'Atenção e proximidade em cada encontro.'],
   ];
   return <div className="care-accordion">{items.map(([title, text], i) => <div className={`care-item ${active === i ? 'is-open' : ''}`} key={title}><h3><button aria-expanded={active === i} aria-controls={`care-panel-${i}`} id={`care-button-${i}`} onClick={() => setActive(active === i ? null : i)}><span className="care-number">0{i + 1}</span><span>{title}</span><Icon name="plus" /></button></h3><div className="care-answer" id={`care-panel-${i}`} role="region" aria-labelledby={`care-button-${i}`} inert={active !== i ? true : undefined} aria-hidden={active !== i}><div><p>{text}</p></div></div></div>)}</div>;
 }
@@ -112,7 +113,7 @@ export default function App() {
 
       <section className="doctor section-pad" aria-labelledby="doctor-title"><div className="doctor-photos"><div className="doctor-main" data-image-reveal><Photo id="atendimento" alt="Dra. Laiane durante um atendimento odontológico" /></div><div className="doctor-detail" data-image-reveal><Photo id="doutora-paciente" alt="Dra. Laiane e uma paciente, juntas na recepção da SorriMed" sizes="(max-width: 760px) 42vw, 22vw" /></div><span className="image-caption">PRESENÇA EM CADA DETALHE.</span></div><div className="doctor-copy"><div className="section-eyebrow"><span className="little-line" />QUEM CUIDA DE VOCÊ</div><h2 id="doctor-title" data-reveal>Antes de cuidar<br />do seu sorriso,<br /><em>cuidamos de você.</em></h2><p>Com a Dra. Laiane Basílio e equipe, cada encontro começa com atenção. Porque se sentir bem também faz parte do cuidado.</p><div className="doctor-signature"><span>Dra. Laiane Basílio</span><small>SORRIMED CLÍNICA ODONTOLÓGICA</small></div><a className="text-link" href={WHATSAPP} target="_blank" rel="noopener noreferrer">Vamos nos conhecer <Icon name="diagonal" size={18} /></a></div></section>
 
-      <section className="care section-pad" id="cuidado" aria-labelledby="care-title"><div className="care-heading"><div className="section-eyebrow"><span className="little-line" />DO SEU JEITO. NO SEU TEMPO.</div><h2 id="care-title" data-reveal>O seu sorriso<br />merece <em>presença.</em></h2><p>Um cuidado pensado para a pessoa<br />que existe por trás do sorriso.</p><span className="care-mark" aria-hidden="true"><Icon name="heart" size={63} /></span></div><CareAccordion /></section>
+      <section className="care care--lanyard section-pad" id="cuidado" aria-labelledby="care-title"><div className="care-lanyard-copy"><div className="care-heading"><div className="section-eyebrow"><span className="little-line" />DO SEU JEITO. NO SEU TEMPO.</div><h2 id="care-title" data-reveal>O seu sorriso<br />merece <em>presença.</em></h2></div><CareAccordion /></div><DoctorLanyard /></section>
 
       <Gallery />
 

@@ -1,5 +1,6 @@
 export default function Icon({ name = 'arrow', size = 20, ...props }) {
   const paths = {
+    rotate: <><path d="M20 7v5h-5M4 17v-5h5" /><path d="M5.5 8a7 7 0 0 1 11.6-3L20 8M4 16l2.9 3A7 7 0 0 0 18.5 16" /></>,
     arrow: <><path d="M5 12h14M13 6l6 6-6 6" /></>,
     diagonal: <><path d="M6 18 18 6M6 6h12v12" /></>,
     down: <><path d="M12 4v16m-6-6 6 6 6-6" /></>,

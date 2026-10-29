@@ -1,5 +1,6 @@
 {
   "doutora-capa": {
+    "source": "assets/originals/foto da doutora para capa inicial.png",
     "original": "foto da doutora para capa inicial.png",
     "width": 1024,
     "height": 1536,
@@ -22,6 +23,7 @@
     ]
   },
   "logo": {
+    "source": "assets/originals/logo da sorrimed.png",
     "original": "logo da sorrimed.png",
     "width": 2151,
     "height": 731,
@@ -44,6 +46,7 @@
     ]
   },
   "atendimento": {
+    "source": "assets/originals/doutora atendendo paciente.png",
     "original": "doutora atendendo paciente.png",
     "width": 941,
     "height": 1671,
@@ -66,6 +69,7 @@
     ]
   },
   "doutora-paciente": {
+    "source": "assets/originals/foto da doutora com paciente.png",
     "original": "foto da doutora com paciente.png",
     "width": 941,
     "height": 1672,
@@ -88,6 +92,7 @@
     ]
   },
   "sorriso": {
+    "source": "assets/originals/foto paciente sorrido (foto muito legal).png",
     "original": "foto paciente sorrido (foto muito legal).png",
     "width": 941,
     "height": 1672,
@@ -109,29 +114,31 @@
       }
     ]
   },
-  "paciente": {
+  "paciente-azul": {
+    "source": "assets/edited/paciente-azul.png",
     "original": "foto paciente.jpg",
-    "width": 287,
-    "height": 510,
+    "width": 1122,
+    "height": 1402,
     "variants": [
       {
-        "src": "/images/paciente-480.webp",
-        "width": 287,
-        "height": 510
+        "src": "/images/paciente-azul-480.webp",
+        "width": 480,
+        "height": 600
       },
       {
-        "src": "/images/paciente-900.webp",
-        "width": 287,
-        "height": 510
+        "src": "/images/paciente-azul-900.webp",
+        "width": 900,
+        "height": 1125
       },
       {
-        "src": "/images/paciente-1400.webp",
-        "width": 287,
-        "height": 510
+        "src": "/images/paciente-azul-1400.webp",
+        "width": 1122,
+        "height": 1402
       }
     ]
   },
   "crianca-sorriso": {
+    "source": "assets/originals/foto paiente criança.png",
     "original": "foto paiente criança.png",
     "width": 816,
     "height": 1020,
@@ -154,6 +161,7 @@
     ]
   },
   "crianca-brincando": {
+    "source": "assets/originals/paciente criança se divertindo no consutório.jpg",
     "original": "paciente criança se divertindo no consutório.jpg",
     "width": 408,
     "height": 510,
@@ -176,6 +184,7 @@
     ]
   },
   "crianca-desenhando": {
+    "source": "assets/originals/paciente criança se divertindo.png",
     "original": "paciente criança se divertindo.png",
     "width": 941,
     "height": 1672,
@@ -198,6 +207,7 @@
     ]
   },
   "fachada": {
+    "source": "assets/originals/foto da fachda da clinica.png",
     "original": "foto da fachda da clinica.png",
     "width": 1086,
     "height": 1448,
@@ -220,6 +230,7 @@
     ]
   },
   "recepcao": {
+    "source": "assets/originals/foto da recepção da clinica.png",
     "original": "foto da recepção da clinica.png",
     "width": 941,
     "height": 1672,
@@ -242,6 +253,7 @@
     ]
   },
   "consultorio": {
+    "source": "assets/originals/foto da area cirurgica da clinica.png",
     "original": "foto da area cirurgica da clinica.png",
     "width": 941,
     "height": 1672,
@@ -264,6 +276,7 @@
     ]
   },
   "sala": {
+    "source": "assets/originals/sala de atendimento do consultório.jpg",
     "original": "sala de atendimento do consultório.jpg",
     "width": 287,
     "height": 510,
@@ -286,6 +299,7 @@
     ]
   },
   "resultado-01": {
+    "source": "assets/originals/antes e depis resultado paciente.png",
     "original": "antes e depis resultado paciente.png",
     "width": 885,
     "height": 1020,
@@ -308,6 +322,7 @@
     ]
   },
   "resultado-02": {
+    "source": "assets/originals/antes e depois resultado paciente 2.png",
     "original": "antes e depois resultado paciente 2.png",
     "width": 848,
     "height": 1020,
@@ -330,6 +345,7 @@
     ]
   },
   "resultado-03": {
+    "source": "assets/originals/antes e depois resultado paciente 3.png",
     "original": "antes e depois resultado paciente 3.png",
     "width": 1014,
     "height": 1020,
@@ -352,6 +368,7 @@
     ]
   },
   "resultado-04": {
+    "source": "assets/originals/antes e depois resultado paciente 5.jpg",
     "original": "antes e depois resultado paciente 5.jpg",
     "width": 910,
     "height": 1616,
@@ -374,6 +391,7 @@
     ]
   },
   "resultado-05": {
+    "source": "assets/originals/antes e depois resultado paciente 6.png",
     "original": "antes e depois resultado paciente 6.png",
     "width": 941,
     "height": 1672,
@@ -396,6 +414,7 @@
     ]
   },
   "resultado-06": {
+    "source": "assets/originals/antes e depois resultado paciente.png",
     "original": "antes e depois resultado paciente.png",
     "width": 1020,
     "height": 1020,
@@ -418,6 +437,7 @@
     ]
   },
   "resultado-07": {
+    "source": "assets/originals/antes e depos resultado paciente 1.png",
     "original": "antes e depos resultado paciente 1.png",
     "width": 1020,
     "height": 1020,

@@ -1,6 +1,6 @@
 # SorriMed
 
-Site institucional em React + Vite, com GSAP/ScrollTrigger, rolagem suave Lenis e galeria BounceCards. Tipografia, fotos e ícones são servidos localmente. Não depende de backend, banco de dados ou chaves de API.
+Site institucional em React + Vite, com GSAP/ScrollTrigger, rolagem suave Lenis, galeria BounceCards e retrato interativo Lanyard com Three.js. Tipografia, fotos e ícones são servidos localmente. Não depende de backend, banco de dados ou chaves de API.
 
 ## Desenvolver
 
@@ -47,6 +47,7 @@ Os testes usam Chromium do sistema quando disponível, ou o browser gerenciado p
 ## Estrutura
 
 - `assets/originals/`: todos os 22 arquivos enviados, preservados sem edição.
+- `assets/edited/`: edições solicitadas, mantendo os originais intactos.
 - `public/images/`: cópias WebP responsivas para o site.
 - `src/components/`: galeria, BounceCards, imagens responsivas e SVGs.
 - `src/App.jsx`: conteúdo e seções; contatos oficiais no início do arquivo.
@@ -62,3 +63,5 @@ As versões WebP já estão incluídas. Para regenerar, use `npm run assets` com
 Não foram inventados serviços, especialidades, avaliações, depoimentos ou horários. O perfil usa o nome fornecido, Dra. Laiane Basílio; a confirmação do nome completo, CRO e especialidade indicada pelo solicitante continua pendente antes de publicar o perfil profissional. Veja [as decisões editoriais](docs/CONTEUDO-E-MATERIAIS.md).
 
 O componente BounceCards foi integrado a partir do código React Bits fornecido no pedido, mantendo a física de molas e adaptando botões nativos, acessibilidade, toque e movimento reduzido. Referência: https://reactbits.dev/components/bounce-cards.
+
+O componente Lanyard também usa o código fornecido pelo solicitante, com Three.js, botão de virar pelo teclado, pausa fora da tela e alternativa estática para movimento reduzido ou WebGL indisponível. Referência: https://reactbits.dev/components/lanyard. A versão HTML independente incorpora os mesmos recursos, sem requisições externas. O pacote JavaScript inclui Three.js para manter essa versão autocontida; a cena 3D é inicializada somente quando se aproxima da tela.
