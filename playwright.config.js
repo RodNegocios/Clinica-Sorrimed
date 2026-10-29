@@ -20,7 +20,7 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['Pixel 7'], viewport: { width: 390, height: 844 } } },
   ],
   webServer: {
-    command: 'npm run preview -- --host 127.0.0.1 --port 4173 --strictPort',
+    command: 'python3 -m http.server 4173 --bind 127.0.0.1 --directory dist',
     port: 4173,
     reuseExistingServer: !process.env.CI,
     timeout: 30000,

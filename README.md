@@ -1,5 +1,15 @@
 # SorriMed
 
+Esta branch `develop` contém o código-fonte.
+
+## Publicação nativa GitHub → Hostinger
+
+`develop` preserva o projeto editável. `main` contém somente o site compilado na raiz, pronto para o checkout da Hostinger em `public_html`. Leia [o fluxo de publicação](docs/PUBLICACAO-NATIVA.md).
+
+Após selecionar `develop`, `npm ci` instala o hook local. Nas próximas atualizações, faça commit e `git push origin develop`: o hook compila, executa os testes e envia uma branch `publish/sorrimed-…` para abrir PR em `main`. Após aprovação e merge autorizado, a Hostinger implanta a raiz estática. Não há merge automático. Edições pelo site do GitHub não executam esse build local.
+
+Os comandos de ZIP abaixo são opcionais para arquivo e visualização local; a integração nativa não os utiliza.
+
 Site institucional em React + Vite, com GSAP/ScrollTrigger, rolagem suave Lenis, galeria BounceCards e retrato interativo Lanyard com Three.js. Tipografia, fotos e ícones são servidos localmente. Não depende de backend, banco de dados ou chaves de API.
 
 ## Desenvolver

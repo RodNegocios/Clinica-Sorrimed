@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [ "$local_ref" = refs/heads/develop ]; then
+    if [ "$remote_ref" != refs/heads/develop ]; then
+      echo 'Push develop to develop; main must receive a reviewed production PR.' >&2
+      exit 1
+    fi
+    python3 scripts/publish_static.py --source "$local_sha" --remote "$1"
+  fi
+done
