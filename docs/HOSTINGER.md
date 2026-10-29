@@ -8,7 +8,7 @@ Para visualizar com duplo clique no computador, use `release/visualizacao/index.
 
 1. Confirme nome profissional completo, CRO e eventual especialidade antes da publicação do perfil, conforme solicitado. Edite `src/App.jsx` com os dados confirmados; nenhum registro foi inventado.
 2. Execute `npm ci`, `npm run build` e `npm test` no ambiente de desenvolvimento.
-3. Execute `npm run package:hostinger`. O resultado será `release/sorrimed-hostinger.zip`.
+3. Execute `npm run package:hostinger`. O comando valida `release/sorrimed-hostinger.zip` e atualiza automaticamente `entrega/sorrimed-hostinger.zip`, a cópia disponível para download no GitHub. Inclua essa cópia no commit.
 
 ## Enviar
 
