@@ -5,13 +5,12 @@ import Lenis from 'lenis';
 import Photo from './components/Photo';
 import Icon from './components/Icon';
 import Gallery from './components/Gallery';
-import DoctorLanyard from './components/DoctorLanyard';
 
 gsap.registerPlugin(ScrollTrigger);
 const WHATSAPP = 'https://wa.me/5565999800704';
 const INSTAGRAM = 'https://www.instagram.com/sorrimeddo/';
 const MAPS = 'https://www.google.com/maps/search/?api=1&query=SorriMed%20Rua%20Rio%20Grande%20do%20Sul%20157%20Comodoro%20MT';
-const links = [['A SorriMed', '#sobre'], ['Nosso cuidado', '#cuidado'], ['Sorrisos reais', '#sorrisos']];
+const links = [['A SorriMed', '#sobre'], ['A doutora', '#doutora'], ['Sorrisos reais', '#sorrisos']];
 
 function ContactButton({ children = 'Vamos cuidar do seu sorriso?', className = '', small = false }) {
   return <a className={`contact-button ${small ? 'small' : ''} ${className}`} href={WHATSAPP} target="_blank" rel="noopener noreferrer"><span>{children}</span><span className="button-icon"><Icon name="diagonal" size={small ? 17 : 20} /></span></a>;
@@ -37,16 +36,6 @@ function MobileMenu({ onClose }) {
 
 function Seal() {
   return <div className="care-seal" aria-hidden="true"><svg className="seal-ring" viewBox="0 0 120 120"><defs><path id="circle-type" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0" /></defs><text><textPath href="#circle-type" textLength="274">CUIDADO QUE ACOLHE. SORRISOS QUE TRANSFORMAM. </textPath></text></svg><Icon name="sparkle" size={31} /></div>;
-}
-
-function CareAccordion() {
-  const [active, setActive] = useState(0);
-  const items = [
-    ['Primeiro, a gente escuta.', 'Nossa conversa começa por você, suas dúvidas e seus desejos.'],
-    ['Cada sorriso, um caminho.', 'Um olhar individual para suas necessidades e possibilidades de cuidado.'],
-    ['Cuidado que continua.', 'Atenção e proximidade em cada encontro.'],
-  ];
-  return <div className="care-accordion">{items.map(([title, text], i) => <div className={`care-item ${active === i ? 'is-open' : ''}`} key={title}><h3><button aria-expanded={active === i} aria-controls={`care-panel-${i}`} id={`care-button-${i}`} onClick={() => setActive(active === i ? null : i)}><span className="care-number">0{i + 1}</span><span>{title}</span><Icon name="plus" /></button></h3><div className="care-answer" id={`care-panel-${i}`} role="region" aria-labelledby={`care-button-${i}`} inert={active !== i ? true : undefined} aria-hidden={active !== i}><div><p>{text}</p></div></div></div>)}</div>;
 }
 
 export default function App() {
@@ -111,9 +100,8 @@ export default function App() {
 
       <section className="philosophy section-pad" id="sobre" aria-labelledby="about-title"><div className="philosophy-top"><span className="section-eyebrow">MAIS DO QUE ODONTOLOGIA</span><Icon name="sparkle" size={35} /></div><h2 id="about-title">{'Transformando vidas'.split(' ').map(word => <span className="philosophy-word" key={word}>{word} </span>)}<br /><em>{'através do sorriso.'.split(' ').map(word => <span className="philosophy-word" key={word}>{word} </span>)}</em></h2><div className="philosophy-bottom"><span>ESSA É A NOSSA ESSÊNCIA.</span><p>Acreditamos no cuidado que acolhe, na conversa que aproxima e na confiança de poder ser você.</p></div></section>
 
-      <section className="doctor section-pad" aria-labelledby="doctor-title"><div className="doctor-photos"><div className="doctor-main" data-image-reveal><Photo id="atendimento" alt="Dra. Laiane durante um atendimento odontológico" /></div><div className="doctor-detail" data-image-reveal><Photo id="doutora-paciente" alt="Dra. Laiane e uma paciente, juntas na recepção da SorriMed" sizes="(max-width: 760px) 42vw, 22vw" /></div><span className="image-caption">PRESENÇA EM CADA DETALHE.</span></div><div className="doctor-copy"><div className="section-eyebrow"><span className="little-line" />QUEM CUIDA DE VOCÊ</div><h2 id="doctor-title" data-reveal>Antes de cuidar<br />do seu sorriso,<br /><em>cuidamos de você.</em></h2><p>Com a Dra. Laiane Basílio e equipe, cada encontro começa com atenção. Porque se sentir bem também faz parte do cuidado.</p><div className="doctor-signature"><span>Dra. Laiane Basílio</span><small>SORRIMED CLÍNICA ODONTOLÓGICA</small></div><a className="text-link" href={WHATSAPP} target="_blank" rel="noopener noreferrer">Vamos nos conhecer <Icon name="diagonal" size={18} /></a></div></section>
+      <section id="doutora" className="doctor section-pad" aria-labelledby="doctor-title"><div className="doctor-photos"><div className="doctor-main" data-image-reveal><Photo id="atendimento" alt="Dra. Laiane durante um atendimento odontológico" /></div><div className="doctor-detail" data-image-reveal><Photo id="doutora-paciente" alt="Dra. Laiane e uma paciente, juntas na recepção da SorriMed" sizes="(max-width: 760px) 42vw, 22vw" /></div><span className="image-caption">PRESENÇA EM CADA DETALHE.</span></div><div className="doctor-copy"><div className="section-eyebrow"><span className="little-line" />QUEM CUIDA DE VOCÊ</div><h2 id="doctor-title" data-reveal>Antes de cuidar<br />do seu sorriso,<br /><em>cuidamos de você.</em></h2><p>Com a Dra. Laiane Basílio e equipe, cada encontro começa com atenção. Porque se sentir bem também faz parte do cuidado.</p><div className="doctor-signature"><span>Dra. Laiane Basílio</span><small>SORRIMED CLÍNICA ODONTOLÓGICA</small></div><a className="text-link" href={WHATSAPP} target="_blank" rel="noopener noreferrer">Vamos nos conhecer <Icon name="diagonal" size={18} /></a></div></section>
 
-      <section className="care care--lanyard section-pad" id="cuidado" aria-labelledby="care-title"><div className="care-lanyard-copy"><div className="care-heading"><div className="section-eyebrow"><span className="little-line" />DO SEU JEITO. NO SEU TEMPO.</div><h2 id="care-title" data-reveal>O seu sorriso<br />merece <em>presença.</em></h2></div><CareAccordion /></div><DoctorLanyard /></section>
 
       <Gallery />
 

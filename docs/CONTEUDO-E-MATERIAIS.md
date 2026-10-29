@@ -1,5 +1,7 @@
 # Curadoria dos materiais
 
+Atualização atual: a seção “O seu sorriso merece presença”, incluindo o Lanyard e o acordeão, foi removida a pedido. As referências a essa seção abaixo registram o histórico de curadoria; não descrevem uma funcionalidade ativa. O retrato de capa, a seção de apresentação da doutora e a galeria continuam presentes.
+
 Todos os 22 arquivos recebidos foram inspecionados. Os originais estão em `assets/originals/`, sem alteração dos bytes. A geração de WebP preserva as composições originais; o recorte editorial usa CSS, e o lightbox da galeria exibe a fotografia completa.
 
 ## Direção

@@ -16,7 +16,7 @@ test('loads real photography, contacts and responsive page without runtime error
     const photoBounds = await page.locator('.hero-image').boundingBox();
     expect(photoBounds.y + photoBounds.height).toBeLessThanOrEqual(heroBounds.y + heroBounds.height);
   }
-  for (const id of ['sobre', 'cuidado', 'sorrisos', 'contato']) {
+  for (const id of ['sobre', 'doutora', 'sorrisos', 'contato']) {
     await page.locator(`#${id}`).scrollIntoViewIfNeeded();
     await page.waitForTimeout(1400);
   }
@@ -64,29 +64,22 @@ test('gallery filters, carousel, keyboard lightbox and focus restoration work', 
   await expect(page.locator('.gallery-controls > span')).toHaveText('01 / 04');
 });
 
-test('navigation, care accordion and reduced motion remain functional', async ({ page }, testInfo) => {
+test('navigation and reduced motion remain functional', async ({ page }, testInfo) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   if (testInfo.project.name === 'mobile') {
     await page.getByRole('button', { name: 'Abrir menu' }).click();
     const menu = page.getByRole('dialog', { name: 'Menu de navegação' });
     await expect(menu).toBeVisible();
-    await menu.getByRole('link', { name: /Nosso cuidado/ }).click();
+    await menu.getByRole('link', { name: /A doutora/ }).click();
     await expect(menu).not.toBeVisible();
   } else {
-    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('link', { name: 'Nosso cuidado' }).click();
+    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('link', { name: 'A doutora' }).click();
   }
-  await expect(page).toHaveURL(/#cuidado$/);
-  const button = page.getByRole('button', { name: /Cada sorriso, um caminho/ });
-  await button.click();
-  await expect(button).toHaveAttribute('aria-expanded', 'true');
-  await expect(page.getByRole('region', { name: /Cada sorriso, um caminho/ })).toContainText('Um olhar individual');
-  await expect(page.getByRole('button', { name: /Primeiro, a gente escuta/ })).toHaveAttribute('aria-expanded', 'false');
-  expect(await page.locator('.seal-ring').evaluate(el => getComputedStyle(el).animationName)).toBe('none');
-  await expect(page.locator('.doctor-card-fallback')).toBeVisible();
+  await expect(page).toHaveURL(/#doutora$/);
+  await expect(page.locator('#cuidado')).toHaveCount(0);
   await expect(page.locator('.lanyard-canvas')).toHaveCount(0);
-  await page.getByRole('button', { name: 'Virar fotografia da doutora' }).click();
-  await expect(page.locator('.doctor-card-fallback img')).toHaveAttribute('alt', 'Dra. Laiane ao lado de uma paciente na SorriMed');
+  expect(await page.locator('.seal-ring').evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   await page.locator('#sorrisos').scrollIntoViewIfNeeded();
   await expect(page.locator('.bounce-cards__card').first()).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();

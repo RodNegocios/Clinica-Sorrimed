@@ -10,7 +10,7 @@ Após selecionar `develop`, `npm ci` instala o hook local. Nas próximas atualiz
 
 Os comandos de ZIP abaixo são opcionais para arquivo e visualização local; a integração nativa não os utiliza.
 
-Site institucional em React + Vite, com GSAP/ScrollTrigger, rolagem suave Lenis, galeria BounceCards e retrato interativo Lanyard com Three.js. Tipografia, fotos e ícones são servidos localmente. Não depende de backend, banco de dados ou chaves de API.
+Site institucional em React + Vite, com GSAP/ScrollTrigger, rolagem suave Lenis, galeria BounceCards. Tipografia, fotos e ícones são servidos localmente. Não depende de backend, banco de dados ou chaves de API.
 
 ## Desenvolver
 
@@ -74,4 +74,5 @@ Não foram inventados serviços, especialidades, avaliações, depoimentos ou ho
 
 O componente BounceCards foi integrado a partir do código React Bits fornecido no pedido, mantendo a física de molas e adaptando botões nativos, acessibilidade, toque e movimento reduzido. Referência: https://reactbits.dev/components/bounce-cards.
 
-O componente Lanyard também usa o código fornecido pelo solicitante, com Three.js, botão de virar pelo teclado, pausa fora da tela e alternativa estática para movimento reduzido ou WebGL indisponível. Referência: https://reactbits.dev/components/lanyard. A versão HTML independente incorpora os mesmos recursos, sem requisições externas. O pacote JavaScript inclui Three.js para manter essa versão autocontida; a cena 3D é inicializada somente quando se aproxima da tela.
+
+A seção “O seu sorriso merece presença”, com acordeão e cartão suspenso, foi removida a pedido. O retrato de capa, a apresentação da doutora e a galeria permanecem.
