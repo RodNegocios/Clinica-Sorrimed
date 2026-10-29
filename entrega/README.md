@@ -9,7 +9,8 @@ Para atualizar o pacote após alterações:
 ```sh
 npm ci
 npm run package:hostinger
-cp release/sorrimed-hostinger.zip entrega/sorrimed-hostinger.zip
 ```
+
+O comando valida o ZIP e atualiza automaticamente a cópia nesta pasta. Inclua `entrega/sorrimed-hostinger.zip` no commit das alterações. Builds idênticos geram o mesmo ZIP, sem diferenças causadas apenas por datas ou permissões dos arquivos locais.
 
 O HTML do pacote de hospedagem precisa ser servido junto com suas pastas. Para abrir o site com duplo clique no computador, gere a versão independente com `npm run package:offline`.

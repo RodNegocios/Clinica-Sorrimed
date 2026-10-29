@@ -22,7 +22,7 @@ npm run package:hostinger
 
 O pacote `release/sorrimed-hostinger.zip` contém o conteúdo de `dist/`, pronto para a raiz de `public_html`. Não envie o repositório inteiro nem `node_modules` para a hospedagem. Leia [o guia de publicação](docs/HOSTINGER.md).
 
-Uma cópia pronta para baixar pelo GitHub está em [entrega/sorrimed-hostinger.zip](entrega/sorrimed-hostinger.zip).
+Uma cópia pronta para baixar pelo GitHub está em [entrega/sorrimed-hostinger.zip](entrega/sorrimed-hostinger.zip). O comando `npm run package:hostinger` valida o conteúdo e atualiza essa cópia automaticamente; inclua o ZIP atualizado no commit. Builds idênticos geram arquivos ZIP idênticos.
 
 ## Abrir no computador, sem servidor
 
